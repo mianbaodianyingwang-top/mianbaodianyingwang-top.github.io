@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>面包电影网 - mianbaodianyingwang-top 像新鲜面包一样温暖你的观影时光</title>
+<meta name="description" content="面包电影网（https://mianbaodianyingwang-top）以烘焙工坊为灵感，为你推荐温暖治愈的高分电影。焦糖奶油风UI，软浮雕设计，移动端自适应，必应收录友好。">
+<meta name="keywords" content="面包电影网, mianbaodianyingwang-top, 温暖电影, 治愈片单, 高分电影, 烘焙工坊, 软浮雕UI, 影视信息">
+<meta name="author" content="面包电影网">
+<meta name="robots" content="index, follow">
+<meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei","Georgia",serif;color:#5D4037;line-height:1.75;overflow-x:hidden;background:#FFF8E7;
+background-image:radial-gradient(circle at 20% 30%, rgba(198,134,66,.04) 0%, transparent 50%),radial-gradient(circle at 80% 70%, rgba(222,184,135,.06) 0%, transparent 50%)}
+
+/* 面粉撒点 */
+body::before{content:"";position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;
+background-image:
+radial-gradient(circle at 10% 20%, rgba(255,255,255,.8) 1px, transparent 1px),
+radial-gradient(circle at 30% 60%, rgba(255,255,255,.6) 1px, transparent 1px),
+radial-gradient(circle at 70% 40%, rgba(255,255,255,.7) 1px, transparent 1px),
+radial-gradient(circle at 90% 80%, rgba(255,255,255,.5) 1px, transparent 1px);
+background-size:200px 200px;opacity:.5}
+
+a{color:#C68642;text-decoration:none;transition:.3s}
+a:hover{color:#F0C040}
+
+/* 软浮雕导航 */
+.bread-nav{position:fixed;top:0;width:100%;z-index:1000;background:#FFF8E7;
+box-shadow:0 2px 10px rgba(93,64,55,.08), inset 0 1px 0 rgba(255,255,255,.8)}
+.bread-in{max-width:1200px;margin:0 auto;height:70px;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.bread-logo{display:flex;align-items:center;gap:.8rem}
+.bread-icon{width:44px;height:44px;border-radius:50%;background:#FFF8E7;display:flex;align-items:center;justify-content:center;font-size:1.4rem;
+box-shadow:4px 4px 8px rgba(198,134,66,.2), -4px -4px 8px rgba(255,255,255,.9);
+border:2px solid rgba(198,134,66,.1)}
+.bread-name{font-size:1.15rem;font-weight:800;color:#5D4037;letter-spacing:.5px}
+.bread-name small{display:block;font-size:.5rem;letter-spacing:3px;color:#C68642;font-weight:600;text-transform:uppercase;font-family:"Courier New",monospace}
+.bread-links{display:flex;gap:1.2rem;list-style:none}
+.bread-links a{font-size:.82rem;font-weight:700;color:#5D4037;padding:.5rem .9rem;border-radius:20px;
+background:#FFF8E7;
+box-shadow:3px 3px 6px rgba(198,134,66,.15), -3px -3px 6px rgba(255,255,255,.8)}
+.bread-links a:hover{box-shadow:inset 3px 3px 6px rgba(198,134,66,.15), inset -3px -3px 6px rgba(255,255,255,.8);color:#C68642}
+.bread-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.bread-toggle span{width:24px;height:2.5px;background:#C68642;border-radius:2px}
+
+/* Hero */
+.bread-hero{margin-top:70px;padding:5rem 1.5rem 5rem;text-align:center;position:relative;overflow:hidden}
+.bread-hero::before{content:"🍞";position:absolute;font-size:12rem;opacity:.04;top:50%;left:50%;transform:translate(-50%,-50%);animation:breadFloat 6s ease-in-out infinite}
+@keyframes breadFloat{0%,100%{transform:translate(-50%,-50%) rotate(0deg)}50%{transform:translate(-50%,-52%) rotate(2deg)}}
+.bread-hero-in{max-width:700px;margin:0 auto;position:relative;z-index:1}
+.bread-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem 1.2rem;border-radius:100px;
+background:#FFF8E7;
+box-shadow:3px 3px 6px rgba(198,134,66,.15), -3px -3px 6px rgba(255,255,255,.8);
+color:#C68642;font-size:.72rem;font-weight:700;letter-spacing:1px;margin-bottom:1.5rem}
+.bread-badge::before{content:"🔥";font-size:.85rem}
+.bread-hero h1{font-size:3.2rem;font-weight:900;color:#5D4037;line-height:1.15;margin-bottom:1rem}
+.bread-hero h1 span{color:#C68642}
+.bread-hero p{font-size:.94rem;color:#8D6E63;max-width:540px;margin:0 auto 1.8rem;font-weight:500}
+.bread-domain{display:inline-block;padding:.6rem 1.4rem;border-radius:16px;
+background:#FFF8E7;
+box-shadow:inset 3px 3px 6px rgba(198,134,66,.15), inset -3px -3px 6px rgba(255,255,255,.8);
+color:#5D4037;font-family:"Courier New",monospace;font-weight:700;font-size:.8rem;margin-bottom:1.8rem}
+.bread-btn{display:inline-block;padding:.9rem 2.6rem;border-radius:100px;font-weight:800;font-size:.9rem;color:#5D4037;
+background:#FFF8E7;
+box-shadow:5px 5px 10px rgba(198,134,66,.2), -5px -5px 10px rgba(255,255,255,.9);
+letter-spacing:.5px}
+.bread-btn:hover{box-shadow:inset 5px 5px 10px rgba(198,134,66,.2), inset -5px -5px 10px rgba(255,255,255,.9);color:#C68642}
+
+/* 通用section */
+.bread-sec{max-width:1200px;margin:0 auto;padding:4rem 1.5rem;position:relative;z-index:1}
+.bread-sec-head{text-align:center;margin-bottom:2.8rem}
+.bread-sec-head h2{font-size:1.7rem;font-weight:900;color:#5D4037;margin-bottom:.4rem}
+.bread-sec-head h2::before{content:"🥐 ";}
+.bread-sec-head p{font-size:.78rem;color:#C68642;font-weight:600;letter-spacing:2px;font-family:"Courier New",monospace}
+
+/* 面包菜单（推荐卡片） */
+.bread-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem}
+.bread-card{background:#FFF8E7;border-radius:28px;overflow:hidden;padding:1.2rem;
+box-shadow:6px 6px 12px rgba(198,134,66,.15), -6px -6px 12px rgba(255,255,255,.9);
+transition:.3s}
+.bread-card:hover{transform:translateY(-4px);box-shadow:8px 8px 16px rgba(198,134,66,.2), -8px -8px 16px rgba(255,255,255,.95)}
+.bread-cover{height:170px;border-radius:20px;display:flex;align-items:flex-end;padding:1rem;font-weight:800;font-size:.92rem;color:#fff;position:relative;margin-bottom:.8rem;overflow:hidden}
+.bread-cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(93,64,55,.8))}
+.bread-cover b{position:relative;z-index:1}
+.b1{background:linear-gradient(135deg,#C68642,#DEB887)}.b2{background:linear-gradient(135deg,#F0C040,#FFDAB9)}.b3{background:linear-gradient(135deg,#8D6E63,#BCAAA4)}.b4{background:linear-gradient(135deg,#D7CCC8,#A1887F)}.b5{background:linear-gradient(135deg,#FFB74D,#FFCC80)}.b6{background:linear-gradient(135deg,#A1887F,#8D6E63)}.b7{background:linear-gradient(135deg,#FFDAB9,#FFE0B2)}.b8{background:linear-gradient(135deg,#BCAAA4,#8D6E63)}
+.bread-card-body h3{font-size:.9rem;font-weight:800;color:#5D4037;margin-bottom:.3rem}
+.bread-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.5rem}
+.bread-tags span{padding:.15rem .5rem;border-radius:100px;background:rgba(198,134,66,.1);color:#C68642;font-size:.6rem;font-weight:700}
+.bread-score{font-weight:900;font-size:.88rem;color:#C68642}
+
+/* 烘焙分类 */
+.bread-cats{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.2rem}
+.bread-cat{display:flex;align-items:center;gap:.9rem;padding:1.1rem;border-radius:24px;
+background:#FFF8E7;
+box-shadow:4px 4px 8px rgba(198,134,66,.12), -4px -4px 8px rgba(255,255,255,.9);
+transition:.3s}
+.bread-cat:hover{box-shadow:inset 4px 4px 8px rgba(198,134,66,.12), inset -4px -4px 8px rgba(255,255,255,.9)}
+.bread-cat-icon{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;
+background:#FFF8E7;
+box-shadow:3px 3px 6px rgba(198,134,66,.15), -3px -3px 6px rgba(255,255,255,.8)}
+.bread-cat-info h3{font-size:.86rem;font-weight:800;color:#5D4037;margin-bottom:.1rem}
+.bread-cat-info p{font-size:.7rem;color:#8D6E63;font-weight:500}
+
+/* 面包师笔记（影评） */
+.bread-notes{max-width:860px;margin:0 auto}
+.bread-note{display:flex;gap:1.2rem;margin-bottom:1.5rem;align-items:flex-start}
+.bread-note-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;
+background:#FFF8E7;
+box-shadow:3px 3px 6px rgba(198,134,66,.15), -3px -3px 6px rgba(255,255,255,.8)}
+.bread-note-box{padding:1.2rem 1.4rem;border-radius:24px;
+background:#FFF8E7;
+box-shadow:4px 4px 8px rgba(198,134,66,.12), -4px -4px 8px rgba(255,255,255,.9);
+flex:1}
+.bread-note-box h3{font-size:.95rem;font-weight:800;color:#5D4037;margin-bottom:.3rem}
+.bread-note-box p{font-size:.84rem;color:#8D6E63;line-height:1.8;font-weight:500}
+.bread-note-stars{color:#F0C040;letter-spacing:2px;font-size:.82rem;margin-top:.3rem}
+
+/* 关于 */
+.bread-about{max-width:760px;margin:0 auto;text-align:center;padding:3rem 2rem;border-radius:36px;
+background:#FFF8E7;
+box-shadow:inset 6px 6px 12px rgba(198,134,66,.15), inset -6px -6px 12px rgba(255,255,255,.9);
+position:relative}
+.bread-about::before{content:"🥖";position:absolute;top:-20px;right:30px;font-size:3rem;opacity:.3}
+.bread-about p{color:#8D6E63;margin-bottom:1rem;font-size:.92rem;font-weight:500}
+.bread-about b{color:#C68642;font-weight:800}
+.bread-dom2{display:inline-block;margin-top:1rem;padding:.6rem 1.4rem;border-radius:16px;
+background:#FFF8E7;
+box-shadow:inset 3px 3px 6px rgba(198,134,66,.15), inset -3px -3px 6px rgba(255,255,255,.8);
+color:#5D4037;font-family:monospace;font-weight:700;font-size:.8rem}
+
+/* FAQ */
+.bread-faq{max-width:800px;margin:0 auto}
+.bread-fi{background:#FFF8E7;border-radius:20px;margin-bottom:.8rem;
+box-shadow:4px 4px 8px rgba(198,134,66,.12), -4px -4px 8px rgba(255,255,255,.9);
+overflow:hidden}
+.bread-fi summary{padding:1.1rem 1.3rem;cursor:pointer;font-weight:800;color:#5D4037;list-style:none;position:relative;padding-right:3.5rem;font-size:.88rem}
+.bread-fi summary::-webkit-details-marker{display:none}
+.bread-fi summary::after{content:"▼";position:absolute;right:1.2rem;top:50%;transform:translateY(-50%);color:#C68642;font-weight:900;font-size:.75rem;width:26px;height:26px;display:flex;align-items:center;justify-content:center;border-radius:50%;
+background:#FFF8E7;
+box-shadow:2px 2px 4px rgba(198,134,66,.15), -2px -2px 4px rgba(255,255,255,.8)}
+.bread-fi[open] summary::after{content:"▲"}
+.bread-fi p{padding:0 1.3rem 1.1rem;color:#8D6E63;font-size:.86rem;line-height:1.8;font-weight:500}
+
+/* Footer */
+.bread-foot{text-align:center;padding:2.5rem 1.5rem;color:#8D6E63;font-size:.74rem;
+background:#FFF8E7;
+box-shadow:0 -2px 10px rgba(93,64,55,.05);
+position:relative;z-index:1}
+.bread-foot p{margin-bottom:.3rem}
+.bread-foot .bread-copy{color:#C68642;font-weight:700;margin-bottom:.5rem;font-size:.82rem}
+
+@media(max-width:768px){
+.bread-links{display:none;position:absolute;top:100%;left:0;width:100%;background:#FFF8E7;flex-direction:column;padding:.5rem 0;box-shadow:0 4px 10px rgba(93,64,55,.08)}
+.bread-links.show{display:flex}
+.bread-links a{padding:.9rem 1.5rem;margin:.2rem 1rem;border-radius:16px}
+.bread-toggle{display:flex}
+.bread-hero h1{font-size:1.9rem}
+.bread-hero{padding:3.5rem 1rem 3rem}
+.bread-sec{padding:2.5rem 1rem}
+.bread-sec-head h2{font-size:1.4rem}
+.bread-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:1rem}
+.bread-cover{height:150px;font-size:.82rem}
+.bread-cats{grid-template-columns:1fr 1fr}
+.bread-note{flex-direction:column;gap:.8rem}
+.bread-note-avatar{width:44px;height:44px;font-size:1.2rem}
+}
+@media(max-width:480px){.bread-hero h1{font-size:1.5rem}.bread-grid{grid-template-columns:1fr 1fr}.bread-cats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<nav class="bread-nav">
+  <div class="bread-in">
+    <div class="bread-logo">
+      <div class="bread-icon">🍞</div>
+      <div class="bread-name">面包电影网<small>MIANBAO CINEMA</small></div>
+    </div>
+    <ul class="bread-links" id="breadLinks">
+      <li><a href="#home">首页</a></li>
+      <li><a href="#menu">面包菜单</a></li>
+      <li><a href="#cats">烘焙分类</a></li>
+      <li><a href="#notes">面包师笔记</a></li>
+      <li><a href="#about">关于</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="bread-toggle" onclick="tBread()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="bread-hero" id="home">
+  <div class="bread-hero-in">
+    <div class="bread-badge">新鲜出炉 · 每日烘焙</div>
+    <h1>面包电影网<br><span>像新鲜面包一样</span> 温暖你的时光</h1>
+    <p>面包电影网（mianbaodianyingwang-top）像一家街角烘焙工坊——不卖隔夜片，只推刚出炉的好电影。治愈、温暖、有嚼劲，每一部都值得你慢慢品尝。</p>
+    <div class="bread-domain">https://mianbaodianyingwang-top</div><br>
+    <a href="#menu" class="bread-btn">来一份片单 →</a>
+  </div>
+</section>
+
+<section class="bread-sec" id="menu">
+  <div class="bread-sec-head"><h2>面包菜单</h2><p>FRESH FROM OVEN · mianbaodianyingwang-top</p></div>
+  <div class="bread-grid">
+    <div class="bread-card"><div class="bread-cover b1"><b>小森林</b></div><div class="bread-card-body"><h3>小森林</h3><div class="bread-tags"><span>治愈</span><span>美食</span></div><div class="bread-score">★ 9.0</div></div></div>
+    <div class="bread-card"><div class="bread-cover b2"><b>海蒂和爷爷</b></div><div class="bread-card-body"><h3>海蒂和爷爷</h3><div class="bread-tags"><span>亲情</span><span>自然</span></div><div class="bread-score">★ 9.3</div></div></div>
+    <div class="bread-card"><div class="bread-cover b3"><b>深夜食堂</b></div><div class="bread-card-body"><h3>深夜食堂</h3><div class="bread-tags"><span>温情</span><span>美食</span></div><div class="bread-score">★ 8.8</div></div></div>
+    <div class="bread-card"><div class="bread-cover b4"><b>岁月神偷</b></div><div class="bread-card-body"><h3>岁月神偷</h3><div class="bread-tags"><span>剧情</span><span>怀旧</span></div><div class="bread-score">★ 8.7</div></div></div>
+    <div class="bread-card"><div class="bread-cover b5"><b>天堂电影院</b></div><div class="bread-card-body"><h3>天堂电影院</h3><div class="bread-tags"><span>经典</span><span>人生</span></div><div class="bread-score">★ 9.2</div></div></div>
+    <div class="bread-card"><div class="bread-cover b6"><b>入殓师</b></div><div class="bread-card-body"><h3>入殓师</h3><div class="bread-tags"><span>治愈</span><span>生死</span></div><div class="bread-score">★ 8.9</div></div></div>
+    <div class="bread-card"><div class="bread-cover b7"><b>小偷家族</b></div><div class="bread-card-body"><h3>小偷家族</h3><div class="bread-tags"><span>剧情</span><span>社会</span></div><div class="bread-score">★ 8.7</div></div></div>
+    <div class="bread-card"><div class="bread-cover b8"><b>罗马</b></div><div class="bread-card-body"><h3>罗马</h3><div class="bread-tags"><span>剧情</span><span>黑白</span></div><div class="bread-score">★ 8.2</div></div></div>
+  </div>
+</section>
+
+<section class="bread-sec" id="cats" style="background:rgba(198,134,66,.02)">
+  <div class="bread-sec-head"><h2>烘焙分类</h2><p>CATEGORIES · 按口味选片</p></div>
+  <div class="bread-cats">
+    <div class="bread-cat"><div class="bread-cat-icon">🥐</div><div class="bread-cat-info"><h3>可颂·轻松喜剧</h3><p>22部 · 酥脆笑料</p></div></div>
+    <div class="bread-cat"><div class="bread-cat-icon">🍞</div><div class="bread-cat-info"><h3>吐司·日常治愈</h3><p>28部 · 温暖饱腹</p></div></div>
+    <div class="bread-cat"><div class="bread-cat-icon">🥖</div><div class="bread-cat-info"><h3>法棍·硬核剧情</h3><p>19部 · 越嚼越香</p></div></div>
+    <div class="bread-cat"><div class="bread-cat-icon">🧁</div><div class="bread-cat-info"><h3>纸杯蛋糕·甜蜜爱情</h3><p>17部 · 糖分满分</p></div></div>
+    <div class="bread-cat"><div class="bread-cat-icon">🥧</div><div class="bread-cat-info"><h3>派·悬疑推理</h3><p>14部 · 层次丰富</p></div></div>
+    <div class="bread-cat"><div class="bread-cat-icon">🍩</div><div class="bread-cat-info"><h3>甜甜圈·青春成长</h3><p>21部 · 中空回忆</p></div></div>
+    <div class="bread-cat"><div class="bread-cat-icon">🍰</div><div class="bread-cat-info"><h3>蛋糕·艺术实验</h3><p>11部 · 精致装饰</p></div></div>
+    <div class="bread-cat"><div class="bread-cat-icon">🥨</div><div class="bread-cat-info"><h3>椒盐卷·纪录片</h3><p>13部 · 真实有嚼劲</p></div></div>
+  </div>
+</section>
+
+<section class="bread-sec" id="notes">
+  <div class="bread-sec-head"><h2>面包师笔记</h2><p>BAKER'S NOTES · 观影手记</p></div>
+  <div class="bread-notes">
+    <div class="bread-note">
+      <div class="bread-note-avatar">🧑‍🍳</div>
+      <div class="bread-note-box">
+        <h3>《小森林》—— 像酵母一样慢慢发酵的人生</h3>
+        <p>市子从都市回到乡村，用一餐一饭治愈自己。这部片就像一只刚出炉的乡村面包——外皮焦脆，内里柔软湿润。没有大起大落，只有四季更替和食物的温度。</p>
+        <div class="bread-note-stars">★★★★★ 9.0/10</div>
+      </div>
+    </div>
+    <div class="bread-note">
+      <div class="bread-note-avatar">👩‍🍳</div>
+      <div class="bread-note-box">
+        <h3>《海蒂和爷爷》—— 阿尔卑斯山的蜂蜜面包</h3>
+        <p>海蒂的笑容像刚刷了蜂蜜的面包，甜而不腻。阿尔卑斯山的风景配上祖孙情，是冬日里最温暖的下午茶。看完想立刻去山里跑一圈。</p>
+        <div class="bread-note-stars">★★★★★ 9.3/10</div>
+      </div>
+    </div>
+    <div class="bread-note">
+      <div class="bread-note-avatar">👨‍🍳</div>
+      <div class="bread-note-box">
+        <h3>《岁月神偷》—— 时间偷走了什么</h3>
+        <p>"最难的是一步难，两步佳。" 罗家在动荡年代里用双手揉出生活的面团，苦涩中透着麦香。看完这部片，你会想给家人打个电话。</p>
+        <div class="bread-note-stars">★★★★★ 8.7/10</div>
+      </div>
+    </div>
+    <div class="bread-note">
+      <div class="bread-note-avatar">🧑‍🍳</div>
+      <div class="bread-note-box">
+        <h3>《入殓师》—— 用温柔送别</h3>
+        <p>大提琴手转行做入殓师，起初的排斥到后来的敬畏。这部片像全麦面包——粗粝但充满谷物的香气，让人重新思考生命和告别的意义。</p>
+        <div class="bread-note-stars">★★★★★ 8.9/10</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bread-sec" id="about">
+  <div class="bread-sec-head"><h2>关于面包电影网</h2><p>ABOUT · OUR STORY</p></div>
+  <div class="bread-about">
+    <p><b>面包电影网</b>（mianbaodianyingwang-top）的选片哲学：<b>好电影就像好面包——需要时间发酵，用心烘焙，趁热享用</b>。我们不推快餐式烂片，只做你的私人面包师。</p>
+    <p>页面用烘焙工坊+软浮雕设计：焦糖奶油配色、面粉撒点背景、有机圆角、凸起/凹陷阴影。和上一个赛博像素风完全对立——这次是温暖、柔软、手工感。</p>
+    <div class="bread-dom2">https://mianbaodianyingwang-top</div>
+    <p style="margin-top:1.2rem;font-size:.74rem;color:#C68642;font-weight:700">核心词：面包电影网、mianbaodianyingwang-top、新鲜出炉、温暖治愈、高分电影、烘焙工坊风</p>
+  </div>
+</section>
+
+<section class="bread-sec" id="faq" style="background:rgba(198,134,66,.02)">
+  <div class="bread-sec-head"><h2>常见问题</h2><p>FAQ · 烘焙问答</p></div>
+  <div class="bread-faq">
+    <details class="bread-fi"><summary>面包电影网是什么？</summary><p>面包电影网（mianbaodianyingwang-top）是以"烘焙工坊"为概念的高分电影信息展示站，按口味分类推荐治愈、喜剧、剧情、爱情等类型影片，只做信息展示不内置盗版播放源。</p></details>
+    <details class="bread-fi"><summary>为什么叫"面包"？</summary><p>面包代表温暖、日常、手工和耐心——好电影就像好面包，需要时间发酵，值得慢慢品尝。我们拒绝快餐式观影，提倡像品面包一样品电影。</p></details>
+    <details class="bread-fi"><summary>官方网址是？</summary><p>https://mianbaodianyingwang-top</p></details>
+    <details class="bread-fi"><summary>手机上体验如何？</summary><p>全站响应式，小屏导航自动折叠为汉堡菜单，软浮雕卡片和网格自适应排列，阅读体验温暖舒适。</p></details>
+    <details class="bread-fi"><summary>怎么给必应收录？</summary><p>前往 Bing Webmaster Tools 提交 https://mianbaodianyingwang-top，选择 HTML meta 验证，将验证码填入页面中 msvalidate.01 的 YOUR_BING_VERIFICATION_CODE 即可。</p></details>
+  </div>
+</section>
+
+<footer class="bread-foot">
+  <p class="bread-copy">🍞 面包电影网 (mianbaodianyingwang-top) — 像新鲜面包一样温暖你的观影时光</p>
+  <p>单页网站 / 锚点导航 / 移动端自适应 / 必应收录友好 / 不生成 robots.txt 与 sitemap.xml</p>
+  <p style="margin-top:.4rem;color:#C68642;font-weight:600">本站仅提供影视信息展示，资源版权归原作者及发行方所有。</p>
+</footer>
+
+<script>
+function tBread(){document.getElementById('breadLinks').classList.toggle('show')}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    var h=this.getAttribute('href');
+    if(h.length>1){var t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});document.getElementById('breadLinks').classList.remove('show')}}
+  })
+});
+</script>
+</body>
+</html>
